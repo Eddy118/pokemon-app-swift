@@ -1,0 +1,44 @@
+# Xcode
+.DS_Store
+build/
+DerivedData/
+xcuserdata/
+.idea/
+
+# Swift Package Manager
+.swiftpm/
+Packages/
+Package.resolved
+
+# CocoaPods
+Pods/
+
+# Carthage
+Carthage/
+
+# SwiftPM
+.build/
+
+# Xcode User Data
+*.xcuserstate
+
+# iOS build artifacts
+*.app
+*.app.dSYM
+*.ipa
+*.xcarchive
+
+# Xcode Derived Data
+DerivedData/
+
+# Personal settings
+.idea/
+.vscode/
+
+# SwiftPM's configuration file
+Package.pins
+
+# Other
+*.log
+*.swp
+*.swo
