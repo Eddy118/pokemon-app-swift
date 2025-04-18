@@ -1,18 +1,18 @@
 import SwiftUI
 
 struct CustomHeaderView: View {
+    @Environment(\.presentationMode) var presentationMode
     var title: String;
     var showBackButton: Bool;
     var body: some View {
         HStack {
             Button(action: {
-                // Back button action
-                print("Back tapped")
+                presentationMode.wrappedValue.dismiss()
             }) {
                 if showBackButton {
                     Image("back-arrow").resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 50, height: 50)
+                        .frame(width: 30, height: 30)
                         .font(.title2)
                 } else {
                     Image("pokeball")
@@ -21,17 +21,14 @@ struct CustomHeaderView: View {
                             .frame(width: 50, height: 50)
                             .font(.title2)
                 }
-              
             }
  
             Text(title)
                 .font(.headline)
                 .fontWeight(.bold)
-                .colorScheme(.dark)
+                .foregroundColor(.black)
 
             Spacer()
-
-       
         }
         .padding()
         .foregroundColor(.blue)
