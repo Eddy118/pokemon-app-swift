@@ -14,20 +14,19 @@ struct ListView: View {
                 LazyVStack(spacing: 16) {
                     ForEach(items, id: \.self) { item in
                         CustomListRow(navigate: {
-                            path.append("pokemonDetails")  // Navigate to details
+                            path.append("pokemonDetails")
                         })
                     }
                 }
                 .padding(.vertical)
             }
             .scrollIndicators(.hidden)
-            .navigationBarBackButtonHidden(true) // Hide default back button
-            .navigationBarTitleDisplayMode(.inline) // Title will appear inline
-            
-            // Define the destination navigation in the parent level (NavigationStack)
+            .navigationBarBackButtonHidden(true)
+            .navigationBarTitleDisplayMode(.inline)
+         
             .navigationDestination(for: String.self) { value in
                 if value == "pokemonDetails" {
-                    PokemonDetailView() // Show PokemonDetailView when "pokemonDetails" is appended
+                    PokemonDetailView()
                 }
             }
         }

@@ -4,6 +4,7 @@ struct TagListView: View {
     var description: String = "At the time of the birth, it has just one tail the tail splits from it's tips as it grows older. At the time of it's birth. Charizard only has one tail the tail splits from it's tips as it grows older.";
     let tags : [String] = ["Flash","Fire"];
     let names: [String] = ["Nido","Nidoq"];
+    let genera: [String] = ["Perceur","Bohrer"];
     
     var body: some View {
         VStack{
@@ -17,6 +18,14 @@ struct TagListView: View {
             HStack {
                 Text("Name: ").font(.title2)
                            ForEach(names, id: \.self) { name in
+                               Tag(tagVal: name)
+                           }
+                Spacer()
+            }.padding().foregroundColor(.black)
+            
+            HStack {
+                Text("Genera: ").font(.title2)
+                           ForEach(genera, id: \.self) { name in
                                Tag(tagVal: name)
                            }
                            Spacer()
